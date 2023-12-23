@@ -54,7 +54,7 @@ export default function FirstSection() {
         </div>
       </div>
 
-      <div className="SectionOneMobile text-white mt-10 ">
+      <div className="SectionOneMobile text-white mt-10 mx-8">
         <div className="flex flex-col jusitfy-center">
           <p className="text-xs">/ Produtos / Mouses Para Jogos / Pro Hero</p>
           <p className="bg-white text-black w-32 flex justify-center items-center gap-2 mt-4 text-xs">
@@ -63,7 +63,7 @@ export default function FirstSection() {
           <p className="font-bold text-xl mt-4">PRO GAMING MOUSE</p>
           <p className="text-sm">Mouse Profissional Para Jogos</p>
 
-          <div className="overflow-hidden mt-10">
+          <div className="overflow-hidden mt-10 ">
             <Swiper
               className=" width-swiper-mobile   "
               pagination={{
@@ -82,6 +82,12 @@ export default function FirstSection() {
               </SwiperSlide>
             </Swiper>
           </div>
+          <p className="mt-20">
+            O mouse PRO Gaming foi criado com um objetivo: ajudar você no
+            ambiente extremamente competitivo e acelerado dos esportes.
+            Aprimorado com o sensor HERO para oferecer a incrível velocidade e
+            precisão que você precisa para vencer.
+          </p>
         </div>
       </div>
     </div>
