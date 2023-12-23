@@ -31,6 +31,10 @@ body {
 .revert {
   filter: invert(100%);
 }
+
+.width-swiper {
+  width: 900px;
+}
 @media (max-width: 1000px) {
   .menuDisplayComputer,
   .sectionOneComputer {

@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import mainMouse from "@/public/mouse/main-mouse.webp";
+import secondMouse from "@/public/mouse/second-mouse.webp";
+import ThreeMouse from "@/public/mouse//plasma-hero-carbon-gallery-3.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
@@ -12,8 +14,9 @@ export default function FirstSection() {
         <p className="text-xs absolute top-0 left-">
           / Produtos / Mouses Para Jogos / Pro Hero
         </p>
-        <div className="w-2/4 overflow-hidden mt-10">
+        <div className="overflow-hidden mt-10">
           <Swiper
+            className=" width-swiper   "
             pagination={{
               dynamicBullets: true,
             }}
@@ -23,7 +26,10 @@ export default function FirstSection() {
               <Image src={mainMouse} alt="mainMouse" />
             </SwiperSlide>
             <SwiperSlide>
-              <Image src={mainMouse} alt="mainMouse" />
+              <Image src={secondMouse} alt="mainMouse" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Image src={ThreeMouse} alt="mainMouse" />
             </SwiperSlide>
           </Swiper>
         </div>
