@@ -38,7 +38,7 @@ export default function NavBar() {
         </div>
       </header>
 
-      <header className="mobileOnly text-white gap-20 p-4  ">
+      <header className="mobileOnly text-white justify-center items-center gap-20 p-4 ">
         {extraMobileMenu && (
           <div className="absolute bg-gray-100 h-screen w-5/6 left-0  top-0  text-black box-border">
             <div className="flex  bg-white w-screen justify-between  items-center p-2">
