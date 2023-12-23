@@ -5,11 +5,13 @@ import user from "@/public/images/header/user.png";
 import store from "@/public/images/header/store.png";
 import menu from "@/public/images/header/menu.png";
 import map from "@/public/images/header/map.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useMobileContext } from "../context/MobileContext";
+
 // esse codigo irá ter uma div para computador e outra para mobile
 export default function NavBar() {
   const [extraInfoPC, setExtraInfoPC] = useState(false); // fazer depois
-  const [extraMobileMenu, setExtraMobileMenu] = useState(false);
+  const { extraMobileMenu, goMenu, goBack } = useMobileContext();
   return (
     <div>
       <header className="flex justify-between items-center  pt-10 gap-10 menuDisplayComputer text-white relative ">
@@ -38,71 +40,73 @@ export default function NavBar() {
         </div>
       </header>
 
-      <header className="mobileOnly text-white justify-center items-center gap-20 p-4 ">
-        {extraMobileMenu && (
-          <div className="absolute bg-gray-100 h-screen w-5/6 left-0  top-0  text-black box-border">
-            <div className="flex  bg-white w-screen justify-between  items-center p-2">
-              <div className="flex items-center gap-2">
-                <Image
-                  src={user}
-                  alt="icon"
-                  className="h-7 w-7 object-cover revert"
-                />
+      <div>
+        <header className="mobileOnly text-white justify-center items-center gap-20 p-4 ">
+          {extraMobileMenu && (
+            <div className="absolute bg-gray-100 h-screen w-5/6 left-0  top-0  text-black box-border">
+              <div className="flex  bg-white w-screen justify-between  items-center p-2">
+                <div className="flex items-center gap-2">
+                  <Image
+                    src={user}
+                    alt="icon"
+                    className="h-7 w-7 object-cover revert"
+                  />
 
-                <p>MINHA CONTA</p>
-              </div>
+                  <p>MINHA CONTA</p>
+                </div>
 
-              <p
-                className="border-gray-400 border-l-2 p-2 border-box font-bold text-xl"
-                onClick={() => setExtraMobileMenu(false)}
-              >
-                X
-              </p>
+                <p
+                  className="border-gray-400 border-l-2 p-2 border-box font-bold text-xl"
+                  onClick={goBack}
+                >
+                  X
+                </p>
+              </div>
+              <div>
+                <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
+                  <p>PRODUTOS</p>
+                  <p className="font-bold text-2xl">{" > "}</p>
+                </div>
+                <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
+                  <p>SOFTWARE</p>
+                  <p className="font-bold text-2xl">{" > "}</p>
+                </div>
+                <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
+                  <p>INOVAÇÃO</p>
+                  <p className="font-bold text-2xl">{" > "}</p>
+                </div>
+                <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
+                  <p>COMUNIDADE</p>
+                  <p className="font-bold text-2xl">{" > "}</p>
+                </div>
+                <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
+                  <p>SUPORTE</p>
+                  <p className="font-bold text-2xl">{" > "}</p>
+                </div>
+                <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
+                  <p>NOSSAS MARCAS</p>
+                  <p className="font-bold text-2xl">{" > "}</p>
+                </div>
+              </div>
+              <div className="absolute bottom-8 flex justify-center w-full items-center gap-2">
+                <Image src={map} alt="map" className="h-5 w-5" />
+                <p className="text-sm">BRASIL</p>
+              </div>
             </div>
-            <div>
-              <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
-                <p>PRODUTOS</p>
-                <p className="font-bold text-2xl">{" > "}</p>
-              </div>
-              <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
-                <p>SOFTWARE</p>
-                <p className="font-bold text-2xl">{" > "}</p>
-              </div>
-              <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
-                <p>INOVAÇÃO</p>
-                <p className="font-bold text-2xl">{" > "}</p>
-              </div>
-              <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
-                <p>COMUNIDADE</p>
-                <p className="font-bold text-2xl">{" > "}</p>
-              </div>
-              <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
-                <p>SUPORTE</p>
-                <p className="font-bold text-2xl">{" > "}</p>
-              </div>
-              <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
-                <p>NOSSAS MARCAS</p>
-                <p className="font-bold text-2xl">{" > "}</p>
-              </div>
-            </div>
-            <div className="absolute bottom-8 flex justify-center w-full items-center gap-2">
-              <Image src={map} alt="map" className="h-5 w-5" />
-              <p className="text-sm">BRASIL</p>
-            </div>
+          )}
+          <div onClick={goMenu}>
+            <Image src={menu} alt="icon" className="h-5 w-5 object-cover" />
           </div>
-        )}
-        <div onClick={() => setExtraMobileMenu(true)}>
-          <Image src={menu} alt="icon" className="h-5 w-5 object-cover" />
-        </div>
 
-        <div>
-          <p>LOGITECH</p>
-        </div>
-        <div className="flex gap-4">
-          <Image src={search} alt="icon" className="h-5 w-5 object-cover" />
-          <Image src={store} alt="icon" className="h-5 w-5 object-cover" />
-        </div>
-      </header>
+          <div>
+            <p>LOGITECH</p>
+          </div>
+          <div className="flex gap-4">
+            <Image src={search} alt="icon" className="h-5 w-5 object-cover" />
+            <Image src={store} alt="icon" className="h-5 w-5 object-cover" />
+          </div>
+        </header>
+      </div>
     </div>
   );
 }

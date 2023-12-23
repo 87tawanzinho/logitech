@@ -7,7 +7,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { useMobileContext } from "../context/MobileContext";
 export default function FirstSection() {
+  const { extraMobileMenu } = useMobileContext();
+
   return (
     <div>
       <div className="flex justify-between items-center  sectionOneComputer text-white mt-20 p-4 relative  ">
@@ -15,7 +18,11 @@ export default function FirstSection() {
           <p className="text-xs absolute top-0 left-">
             / Produtos / Mouses Para Jogos / Pro Hero
           </p>
-          <div className="overflow-hidden mt-10">
+          <div
+            className={`overflow-hidden mt-10 ${
+              extraMobileMenu ? "hidden" : null
+            } `}
+          >
             <Swiper
               className=" width-swiper   "
               pagination={{
@@ -63,9 +70,9 @@ export default function FirstSection() {
           <p className="font-bold text-xl mt-4">PRO GAMING MOUSE</p>
           <p className="text-sm">Mouse Profissional Para Jogos</p>
 
-          <div className="overflow-hidden mt-10 ">
+          <div className={` mt-10 ${extraMobileMenu ? "hidden" : null} `}>
             <Swiper
-              className=" width-swiper-mobile   "
+              className=" width-swiper-mobile z-10  "
               pagination={{
                 dynamicBullets: true,
               }}
