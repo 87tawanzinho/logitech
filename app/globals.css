@@ -32,7 +32,8 @@ body {
   filter: invert(100%);
 }
 @media (max-width: 1000px) {
-  .menuDisplayComputer {
+  .menuDisplayComputer,
+  .sectionOneComputer {
     display: none;
   }
 

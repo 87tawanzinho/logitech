@@ -4,8 +4,8 @@ import FirstSection from "./components/FirstSection";
 
 export default function Home() {
   return (
-    <main>
-      <div className=" flex justify-center items-center">
+    <main className="flex justify-center items-center flex-col">
+      <div className="max-w-8xl">
         <NavBar />
         <FirstSection />
       </div>

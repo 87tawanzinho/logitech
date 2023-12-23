@@ -12,7 +12,7 @@ export default function NavBar() {
   const [extraMobileMenu, setExtraMobileMenu] = useState(false);
   return (
     <div>
-      <header className="flex justify-between items-center  pt-10 max-w-9xl gap-10 menuDisplayComputer text-white relative ">
+      <header className="flex justify-between items-center  pt-10 gap-10 menuDisplayComputer text-white relative ">
         <div>
           <h2 className="text-4xl">LOGITECH</h2>
         </div>
