@@ -4,6 +4,7 @@ import search from "@/public/images/header/search.png";
 import user from "@/public/images/header/user.png";
 import store from "@/public/images/header/store.png";
 import menu from "@/public/images/header/menu.png";
+import map from "@/public/images/header/map.png";
 import { useState } from "react";
 // esse codigo irá ter uma div para computador e outra para mobile
 export default function NavBar() {
@@ -39,7 +40,7 @@ export default function NavBar() {
 
       <header className="mobileOnly text-white gap-20 p-4  ">
         {extraMobileMenu && (
-          <div className="absolute bg-gray-200 h-screen w-5/6 left-0  top-0  text-black box-border">
+          <div className="absolute bg-gray-100 h-screen w-5/6 left-0  top-0  text-black box-border">
             <div className="flex  bg-white w-screen justify-between  items-center p-2">
               <div className="flex items-center gap-2">
                 <Image
@@ -58,7 +59,36 @@ export default function NavBar() {
                 X
               </p>
             </div>
-            <div></div>
+            <div>
+              <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
+                <p>PRODUTOS</p>
+                <p className="font-bold text-2xl">{" > "}</p>
+              </div>
+              <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
+                <p>SOFTWARE</p>
+                <p className="font-bold text-2xl">{" > "}</p>
+              </div>
+              <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
+                <p>INOVAÇÃO</p>
+                <p className="font-bold text-2xl">{" > "}</p>
+              </div>
+              <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
+                <p>COMUNIDADE</p>
+                <p className="font-bold text-2xl">{" > "}</p>
+              </div>
+              <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
+                <p>SUPORTE</p>
+                <p className="font-bold text-2xl">{" > "}</p>
+              </div>
+              <div className="flex justify-between p-4 border-gray-300 border-b-2 items-center">
+                <p>NOSSAS MARCAS</p>
+                <p className="font-bold text-2xl">{" > "}</p>
+              </div>
+            </div>
+            <div className="absolute bottom-8 flex justify-center w-full items-center gap-2">
+              <Image src={map} alt="map" className="h-5 w-5" />
+              <p className="text-sm">BRASIL</p>
+            </div>
           </div>
         )}
         <div onClick={() => setExtraMobileMenu(true)}>
