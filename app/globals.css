@@ -4,10 +4,17 @@
 
 body {
   background: #1a1b1b;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .mobileOnly {
   display: none;
+}
+
+.absolute {
+  transition: 0.3s ease-in-out;
 }
 
 .hoverMenuComputer p {
@@ -19,6 +26,10 @@ body {
   background: white;
   color: black;
   border-radius: 60px;
+}
+
+.revert {
+  filter: invert(100%);
 }
 @media (max-width: 1000px) {
   .menuDisplayComputer {

@@ -3,11 +3,12 @@ import Image from "next/image";
 import search from "@/public/images/header/search.png";
 import user from "@/public/images/header/user.png";
 import store from "@/public/images/header/store.png";
+import menu from "@/public/images/header/menu.png";
 import { useState } from "react";
 // esse codigo irá ter uma div para computador e outra para mobile
 export default function NavBar() {
-  const [extraInfo, setExtraInfo] = useState(false); // fazer depois
-
+  const [extraInfoPC, setExtraInfoPC] = useState(false); // fazer depois
+  const [extraMobileMenu, setExtraMobileMenu] = useState(false);
   return (
     <div>
       <header className="flex justify-between items-center  pt-10 max-w-9xl gap-10 menuDisplayComputer text-white relative ">
@@ -17,8 +18,8 @@ export default function NavBar() {
 
         <div
           className="flex flex-col gap-4 hoverMenuComputer text-md "
-          onMouseMove={() => setExtraInfo(true)}
-          onMouseOut={() => setExtraInfo(false)}
+          onMouseMove={() => setExtraInfoPC(true)}
+          onMouseOut={() => setExtraInfoPC(false)}
         >
           <div className="flex">
             <p>PRODUTOS</p>
@@ -36,9 +37,32 @@ export default function NavBar() {
         </div>
       </header>
 
-      <header className="mobileOnly text-white gap-20 p-4 ">
-        <div>
-          <p>asdsa</p>
+      <header className="mobileOnly text-white gap-20 p-4  ">
+        {extraMobileMenu && (
+          <div className="absolute bg-gray-200 h-screen w-5/6 left-0  top-0  text-black box-border">
+            <div className="flex  bg-white w-screen justify-between  items-center p-2">
+              <div className="flex items-center gap-2">
+                <Image
+                  src={user}
+                  alt="icon"
+                  className="h-7 w-7 object-cover revert"
+                />
+
+                <p>MINHA CONTA</p>
+              </div>
+
+              <p
+                className="border-gray-400 border-l-2 p-2 border-box font-bold text-xl"
+                onClick={() => setExtraMobileMenu(false)}
+              >
+                X
+              </p>
+            </div>
+            <div></div>
+          </div>
+        )}
+        <div onClick={() => setExtraMobileMenu(true)}>
+          <Image src={menu} alt="icon" className="h-5 w-5 object-cover" />
         </div>
 
         <div>
