@@ -20,7 +20,7 @@ body {
   border-radius: 60px;
   
 }
-@media (max-width:1200px) {
+@media (max-width:1000px) {
   .menuDisplayComputer {
     display: none;
   } 
