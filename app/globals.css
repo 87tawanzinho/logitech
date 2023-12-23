@@ -9,7 +9,8 @@ body {
   box-sizing: border-box;
 }
 
-.mobileOnly {
+.mobileOnly,
+.SectionOneMobile {
   display: none;
 }
 
@@ -35,14 +36,18 @@ body {
 .width-swiper {
   width: 900px;
 }
+
+.width-swiper-mobile {
+  width: 80vw;
+}
 @media (max-width: 1000px) {
   .menuDisplayComputer,
   .sectionOneComputer {
     display: none;
   }
 
-  .mobileOnly {
+  .mobileOnly,
+  .SectionOneMobile {
     display: flex;
-    width: max-content;
   }
 }
