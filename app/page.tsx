@@ -4,7 +4,9 @@ import NavBar from './components/NavBar'
 export default function Home() {
   return (
   <main>
-    <NavBar />
+   <div className=' flex justify-center items-center'>
+   <NavBar />
+   </div>
   </main>
   )
 }
