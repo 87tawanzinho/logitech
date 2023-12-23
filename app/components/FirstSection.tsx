@@ -1,12 +1,31 @@
+"use client";
 import Image from "next/image";
 import mainMouse from "@/public/mouse/main-mouse.webp";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 export default function FirstSection() {
   return (
-    <div className="flex justify-between items-center sectionOneComputer text-white mt-20 p-4 relative ">
-      <div className="flex flex-col">
-        <p className="text-xs">/ Produtos / Mouses Para Jogos / Pro Hero</p>
-        <div>
-          <Image src={mainMouse} alt="mainMouse" />
+    <div className="flex justify-between items-center  sectionOneComputer text-white mt-20 p-4 relative  ">
+      <div className="flex flex-col ">
+        <p className="text-xs absolute top-0 left-">
+          / Produtos / Mouses Para Jogos / Pro Hero
+        </p>
+        <div className="w-2/4 overflow-hidden mt-10">
+          <Swiper
+            pagination={{
+              dynamicBullets: true,
+            }}
+            modules={[Pagination]}
+          >
+            <SwiperSlide>
+              <Image src={mainMouse} alt="mainMouse" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Image src={mainMouse} alt="mainMouse" />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
 
