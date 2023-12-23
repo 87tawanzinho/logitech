@@ -2,15 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   background: #1a1b1b;
 }
 
-
+.mobileOnly {
+  display: none;
+}
 
 .hoverMenuComputer p {
- padding: 8px;
+  padding: 8px;
 }
 
 .hoverMenuComputer p:hover {
@@ -18,10 +19,14 @@ body {
   background: white;
   color: black;
   border-radius: 60px;
-  
 }
-@media (max-width:1000px) {
+@media (max-width: 1000px) {
   .menuDisplayComputer {
     display: none;
-  } 
+  }
+
+  .mobileOnly {
+    display: flex;
+    width: max-content;
+  }
 }

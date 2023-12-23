@@ -1,12 +1,12 @@
-import Image from 'next/image'
-import NavBar from './components/NavBar'
+import Image from "next/image";
+import NavBar from "./components/NavBar";
 
 export default function Home() {
   return (
-  <main>
-   <div className=' flex justify-center items-center'>
-   <NavBar />
-   </div>
-  </main>
-  )
+    <main>
+      <div className=" flex justify-center items-center">
+        <NavBar />
+      </div>
+    </main>
+  );
 }
