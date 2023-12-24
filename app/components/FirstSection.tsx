@@ -8,8 +8,10 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { useMobileContext } from "../context/MobileContext";
+import { useState } from "react";
 export default function FirstSection() {
   const { extraMobileMenu } = useMobileContext();
+  const [seeInformations, setSeeInformations] = useState(false);
 
   return (
     <div>
@@ -58,6 +60,43 @@ export default function FirstSection() {
             Aprimorado com o sensor HERO para oferecer a incrível velocidade e
             precisão que você precisa para vencer.
           </p>
+          <div>
+            <div className="bg-zinc-800 mt-10 flex flex-col p-4 ">
+              <div className="flex justify-between items-center gap-4">
+                <p className="text-xl ">ESPECIFICAÇÕES E DETALHES</p>
+                {!seeInformations ? (
+                  <p
+                    className="text-4xl cursor-pointer"
+                    onClick={() => {
+                      setSeeInformations(true);
+                    }}
+                  >
+                    +
+                  </p>
+                ) : (
+                  <div>
+                    <p
+                      className="text-4xl cursor-pointer"
+                      onClick={() => {
+                        setSeeInformations(false);
+                      }}
+                    >
+                      -
+                    </p>
+                  </div>
+                )}
+              </div>
+              {seeInformations ? (
+                <div>
+                  <p className="text-md mt-10">Dimensões</p>
+                  <p className="mt-10">
+                    Altura: 116,6 mm Largura: 62,15 mm Profundidade: 38,2 mm
+                    Peso: 85 g (somente mouse) Comprimento do cabo: 2,1 m
+                  </p>
+                </div>
+              ) : null}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -95,6 +134,42 @@ export default function FirstSection() {
             Aprimorado com o sensor HERO para oferecer a incrível velocidade e
             precisão que você precisa para vencer.
           </p>
+
+          <div className="bg-zinc-800 mt-10 flex flex-col p-4">
+            <div className="flex justify-between items-center ">
+              <p className="text-xl max-w-32">ESPECIFICAÇÕES E DETALHES</p>
+              {!seeInformations ? (
+                <p
+                  className="text-4xl"
+                  onClick={() => {
+                    setSeeInformations(true);
+                  }}
+                >
+                  +
+                </p>
+              ) : (
+                <div>
+                  <p
+                    className="text-4xl"
+                    onClick={() => {
+                      setSeeInformations(false);
+                    }}
+                  >
+                    -
+                  </p>
+                </div>
+              )}
+            </div>
+            {seeInformations ? (
+              <div>
+                <p className="text-md mt-10">Dimensões</p>
+                <p className="mt-10">
+                  Altura: 116,6 mm Largura: 62,15 mm Profundidade: 38,2 mm Peso:
+                  85 g (somente mouse) Comprimento do cabo: 2,1 m
+                </p>
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>
