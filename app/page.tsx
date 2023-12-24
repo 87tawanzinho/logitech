@@ -5,7 +5,7 @@ import { MobileContextProvider } from "./context/MobileContext";
 
 export default function Home() {
   return (
-    <main className="flex justify-center items-center flex-col">
+    <main className="flex justify-center items-center flex-col pb-10">
       <MobileContextProvider>
         <div className="max-w-8/12 lg:w-8/12">
           <NavBar />
